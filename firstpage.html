@@ -9,74 +9,236 @@
             color: rgb(0, 0, 0);
             font-family: Arial, Helvetica, sans-serif;
             font-size: larger;
-            background-color: lightgrey;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
             content: icon;
             text-align: center;
 
-
-
+            animation: fadeIn 4.5s ease-in-out;
         }
+
+        img {
+            width: 200px;
+            margin-top: 20px;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        h1,
+        h3,
+        h4,
+        h5 {
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        h5 {
+            display: block;
+            animation-delay: 0.7s;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h5:hover {
+            transform: scale(1.05);
+            color: #003366;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        #logo {
+            height: 50px;
+            width: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #00c4cc;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #008f95;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        .left-box {
+            background-color: #001f4d;
+            width: 250px;
+            height: 100vh;
+        }
+
+        .left-box {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            background: #001f4d;
+        }
+    </style>
+    </style>
+
+
+
     </style>
 </head>
 
 <body>
 
-    <img src="data:image/png;base64,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"
-        alt="SOSH">
-    <h1>IMPORTANT DAYS</h1>
-    <hr>
-    <h3>in 2025 - 2026</h3>
-    <h4>JUNE</h4>
+    <div class="left-box"></div>
+    <h1>📅 SOSH - Important School Days</h1>
 
-    <h5>2nd School Reopens for all the teachers</h5>
-    <h5>7th Bakrid - Holiday</h5>
-    <h5>9th Reopens for Gr 7 - 12 </h5>
-    <h5>16th Reopens for Gr 2 - 6</h5>
-    <h5>18th Reopens for Gr 1 & PP2</h5>
-    <h5>19th Reopens for PP1</h5>
-    <hr>
-    <h4>JULY</h4>
-    <h5>5th Moharram</h5>
-    <hr>
-    <h4>AUGUST</h4>
-
-    <h5>8th Varalakshmi Vratam - Holidays</h5>
-    <h5>9th Raksha Bandhan</h5>
-    <h5>15th independence day</h5>
-    <h5>16th Janmashami - Holidays</h5>
-    <h5>27th Ganesh Chaturthi</h5>
-    <h5>In Aug: 1st , 4th and 5th Saturdays are working days for GRades 1 to 12 due to many holidays.</h5>
-    <hr>
-    <h4>SEPTEMBER</h4>
-    <h5>Second week Term 1 Assesments</h5>
-    <h5>20th Bathukama / Ramleela Celebrations *half Day school</h5>
-    <h5>22nd Sep to 4th Oct Dussehra Vacations</h5>
-    <h5>In sep: 1st ans 2nd Saturday are working days for Grades PP to 12</h5>
-    <hr>
-    <h4>OCTEMBER</h4>
-    <h5>6th School Reopens</h5>
-    <h5>20th and 21st Diwali - Holidays</h5>
-    <h5>In Oct: 2nd, 3rd, and 4th Saurdays are working days for Grade 1 to 12</h5>
-    <h4>DECEMBER</h4>
-    <h5>24th - 27th Christmas Vacations</h5>
-    <hr>
-    <h4>JANUARY</h4>
-    <h5>1st new year - <span style="color: rgb(98, 0, 0);">holiday</span> </h5>
-    <h5>12th to 17th Sankranti <span style="color: rgb(98, 0, 0);">Vaction</span></h5>
-    <h5>26th <span style="color: darkgreen;">Rebublic day</span></h5>
-    <h5>In Jan 1st, 2nd, 4th an 5th Saturdays are working days fo Grade 1 to 12</h5>
-    <h4>FEBRUARY</h4>
-    <h5>Last week TERM 2 Assesments </h5>
-    <h4>MARCH</h4>
-    <h5>3rd Holi - Holday</h5>
-    <h5>20th Ugadi - Holday</h5>
-    <h5>March: Dates for Gradutions will be shared by Jan end. </h5>
-    <h5></h5>
-    <h5></h5>
-    <h5></h5>
+    <ul>
+        <li>🏫 First Day of School – September 5</li>
+        <li>👨‍🏫 Parent-Teacher Conference – October 15</li>
+        <li>❄️ Winter Break Starts – December 20</li>
+        <li>🌸 Spring Break – March 25–29</li>
+        <li>🎓 Last Day of School – June 15</li>
+    </ul>
 
 
 
-</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    </head>
+
+    <body>
+
+        <img src="" alt="">
+        <img src="data:image/png;base64,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"
+            alt="SOSH">
+        <h1>IMPORTANT DAYS</h1>
+        <hr>
+        <h3>in 2025 - 2026</h3>
+        <h4>JUNE</h4>
+
+        <h5>2nd School Reopens for all the teachers</h5>
+        <h5>7th Bakrid - Holiday</h5>
+        <h5>9th Reopens for Gr 7 - 12 </h5>
+        <h5>16th Reopens for Gr 2 - 6</h5>
+        <h5>18th Reopens for Gr 1 & PP2</h5>
+        <h5>19th Reopens for PP1</h5>
+        <hr>
+        <h4>JULY</h4>
+        <h5>5th Moharram</h5>
+        <hr>
+        <h4>AUGUST</h4>
+
+        <h5>8th Varalakshmi Vratam - Holidays</h5>
+        <h5>9th Raksha Bandhan</h5>
+        <h5>15th independence day</h5>
+        <h5>16th Janmashami - Holidays</h5>
+        <h5>27th Ganesh Chaturthi</h5>
+        <h5>In Aug: 1st , 4th and 5th Saturdays are working days for GRades 1 to 12 due to many holidays.</h5>
+        <hr>
+        <h4>SEPTEMBER</h4>
+        <h5>Second week Term 1 Assesments</h5>
+        <h5>20th Bathukama / Ramleela Celebrations *half Day school</h5>
+        <h5>22nd Sep to 4th Oct Dussehra Vacations</h5>
+        <h5>In sep: 1st ans 2nd Saturday are working days for Grades PP to 12</h5>
+        <hr>
+        <h4>OCTEMBER</h4>
+        <h5>6th School Reopens</h5>
+        <h5>20th and 21st Diwali - Holidays</h5>
+        <h5>In Oct: 2nd, 3rd, and 4th Saurdays are working days for Grade 1 to 12</h5>
+        <h4>DECEMBER</h4>
+        <h5>24th - 27th Christmas Vacations</h5>
+        <hr>
+
+        <h4>JANUARY</h4>
+        <h5>1st new year - <span style="color: rgb(98, 0, 0);">holiday</span> </h5>
+        <h5>12th to 17th Sankranti <span style="color: rgb(98, 0, 0);">Vaction</span></h5>
+        <h5>26th <span style="color: darkgreen;">Rebublic day</span></h5>
+        <h5>In Jan 1st, 2nd, 4th an 5th Saturdays are working days fo Grade 1 to 12</h5>
+        <h4>FEBRUARY</h4>
+        <h5>Last week TERM 2 Assesments </h5>
+        <h4>MARCH</h4>
+        <h5>3rd Holi - Holday</h5>
+        <h5>20th Ugadi - Holday</h5>
+        <h5>March: Dates for Gradutions will be shared by Jan end. </h5>
+        <h1><span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">THANK YOU</span>
+            <span style="color: coral;">THANK YOU</span>
+        </h1>
+        <h5><span style="text-align: left;">Made by VAVILALA SAI SRIHAN</span></h5>
+        <h5></h5>
+
+        <hr>
+
+
+    </body>
 
 </html>
